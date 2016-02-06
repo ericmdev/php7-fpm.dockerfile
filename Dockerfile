@@ -15,8 +15,13 @@ ENV FILES config/
 RUN apt-get update && apt-get install -y \
     php7.0-fpm
 
+# Add managed configuration files.
+ADD ${FILES}php-app.ini /etc/php/7.0/fpm/conf.d/
+ADD ${FILES}php-app.ini /etc/php/7.0/cli/conf.d/
+ADD ${FILES}php-app.pool.conf /etc/php/7.0/fpm/pool.d/
+
 # Add run script.
-ADD bin/run.sh /bin/run.sh
+ADD ${FILES}run.sh /bin/run.sh
 
 # Define default command.
 CMD ["/bin/run.sh"]

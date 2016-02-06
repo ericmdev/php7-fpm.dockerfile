@@ -4,8 +4,6 @@
 
 **Dockerfile** of [Debian](https://www.debian.org/) [PHP7-FPM](http://php.net/manual/en/book.fpm.php):
 
-- php7.0-fpm
-
 *Requirements*
 - [Docker](https://www.docker.com/) 
 
